@@ -42,7 +42,8 @@ const generateSVG = (
   progress: number,
   width: number,
   height: number,
-  theme: string
+  theme: string,
+  showText: boolean
 ): string => {
   const progressBarWidth = (progress / 100) * width;
   const progressBarColor = getColorByProgress(progress);
@@ -59,7 +60,11 @@ const generateSVG = (
       <rect width="${progressBarWidth}" height="${height}" fill="${progressBarColor}" rx="4" />
 
       <!-- Progress Text -->
-      <text x="50%" y="50%" font-family="Tahoma" font-size="10" fill="${progressTextColor}" text-anchor="middle" dy="0.3em" font-weight="400">${progressText}</text>
+      ${
+        showText
+          ? `<text x="50%" y="50%" font-family="Tahoma" font-size="10" fill="${progressTextColor}" text-anchor="middle" dy="0.3em" font-weight="400">${progressText}</text>`
+          : ""
+      }
     </svg>
   `;
 };
@@ -70,18 +75,21 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     width = "100",
     height = "20",
     theme = "black",
+    showText = "true",
   } = req.query as {
     progress?: string;
     width?: string;
     height?: string;
     theme?: string;
+    showText?: string;
   };
 
   const svgString = generateSVG(
     parseInt(progress, 10),
     parseInt(width, 10),
     parseInt(height, 10),
-    theme
+    theme,
+    showText.toLowerCase() === "true"
   );
 
   res.setHeader("Content-Type", "image/svg+xml");
