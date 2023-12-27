@@ -56,6 +56,18 @@ https://ice-progress.vercel.app/api/progress?progress=진행률
 ![](https://ice-progress.vercel.app/api/progress?progress=56&width=160&height=30)  
 ![](https://ice-progress.vercel.app/api/progress?progress=22&width=220)
 
+### 진행률 텍스트 표시
+
+진행률 텍스트 표시의 기본값은 `True`이며, `showText` 파라미터로 표시하지 않을 수 있습니다.
+
+```
+![](https://ice-progress.vercel.app/api/progress?progress=79&showText=False)
+![](https://ice-progress.vercel.app/api/progress?progress=79&showText=True)
+```
+
+![](https://ice-progress.vercel.app/api/progress?progress=79&showText=False)  
+![](https://ice-progress.vercel.app/api/progress?progress=79&showText=True)
+
 ## 기타 설명
 
 > **프로세스 바의 색상은 `1%~32%`는 빨간색, `33%~69%`는 노란색, `70%~100%`는 초록색입니다.**
