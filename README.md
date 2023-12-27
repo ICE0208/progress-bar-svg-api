@@ -59,3 +59,35 @@ https://ice-progress.vercel.app/api/progress?progress=진행률
 ## 기타 설명
 
 > **프로세스 바의 색상은 `1%~32%`는 빨간색, `33%~69%`는 노란색, `70%~100%`는 초록색입니다.**
+
+## 로컬에서 실행해보기
+
+### 프로젝트 클론
+
+```bash
+git clone https://github.com/ICE0208/progress-bar-svg-api
+```
+
+### 프로젝트 폴더로 이동
+
+```bash
+cd progress-bar-svg-api
+```
+
+### 필요한 패키지 설치
+
+```bash
+npm install
+```
+
+### 프로젝트 실행
+
+```bash
+npm run dev
+```
+
+### 실행 확인
+
+`http://localhost:3000/api/progress?progress=80`로 접속하여 정상 작동 확인
+
+> **실행 환경에 따라 포트 번호가 달라질 수 있습니다. 프로젝트를 실행했을 때 출력되는 포트 번호를 확인해주세요.**
