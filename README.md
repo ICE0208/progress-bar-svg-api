@@ -1,47 +1,61 @@
-# TypeScript Next.js example
+# Progress Bar SVG API
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+![](https://ice-progress.vercel.app/api/progress?progress=28)
+![](https://ice-progress.vercel.app/api/progress?progress=43)
+![](https://ice-progress.vercel.app/api/progress?progress=75)
 
-## Deploy your own
+## 사용 방법
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-```
-
-```bash
-yarn create next-app --example with-typescript with-typescript-app
-```
-
-```bash
-pnpm create next-app --example with-typescript with-typescript-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+마크다운에서 일반 이미지를 쓰는 것과 동일한 방법으로 사용할 수 있습니다.
 
 ```
-npm install --save-dev typescript
+https://ice-progress.vercel.app/api/progress?progress=진행률
 ```
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+진행률에 0에서 100사이의 숫자를 적으면 해당 퍼센테이지의 진행바를 얻을 수 있습니다.
+
+### 예시
 
 ```
-npm install --save-dev @types/react @types/react-dom @types/node
+![](https://ice-progress.vercel.app/api/progress?progress=32)
+![](https://ice-progress.vercel.app/api/progress?progress=69)
+![](https://ice-progress.vercel.app/api/progress?progress=100)
 ```
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+![](https://ice-progress.vercel.app/api/progress?progress=32)  
+![](https://ice-progress.vercel.app/api/progress?progress=69)  
+![](https://ice-progress.vercel.app/api/progress?progress=100)
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+## 옵션
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+### 배경 색상
+
+배경 색상은 검성색이 기본값이며, `theme` 파라미터를 통해 하얀색으로 변경할 수 있습니다.
+
+```
+![](https://ice-progress.vercel.app/api/progress?progress=30&theme=white)
+![](https://ice-progress.vercel.app/api/progress?progress=58&theme=white)
+![](https://ice-progress.vercel.app/api/progress?progress=86&theme=white)
+```
+
+![](https://ice-progress.vercel.app/api/progress?progress=30&theme=white)  
+![](https://ice-progress.vercel.app/api/progress?progress=58&theme=white)  
+![](https://ice-progress.vercel.app/api/progress?progress=86&theme=white)
+
+### 너비와 높이
+
+너비의 기본값은 `100`, 높이의 기본값은 `20`입니다. `width`와 `height` 파라미터로 너비와 높이를 지정할 수 있습니다.
+
+```
+![](https://ice-progress.vercel.app/api/progress?progress=89&width=70&height=40)
+![](https://ice-progress.vercel.app/api/progress?progress=56&width=160&height=30)
+![](https://ice-progress.vercel.app/api/progress?progress=22&width=220)
+```
+
+![](https://ice-progress.vercel.app/api/progress?progress=89&width=70&height=40)  
+![](https://ice-progress.vercel.app/api/progress?progress=56&width=160&height=30)  
+![](https://ice-progress.vercel.app/api/progress?progress=22&width=220)
+
+## 기타 설명
+
+> **프로세스 바의 색상은 `1%~32%`는 빨간색, `33%~69%`는 노란색, `70%~100%`는 초록색입니다.**
