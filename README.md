@@ -30,7 +30,7 @@ https://ice-progress.vercel.app/api/progress?progress=진행률
 
 ### 배경 색상
 
-배경 색상은 검성색이 기본값이며, `theme` 파라미터를 통해 하얀색으로 변경할 수 있습니다.
+배경 색상은 검정색이 기본값이며, `theme` 파라미터를 통해 하얀색으로 변경할 수 있습니다.
 
 ```
 ![](https://ice-progress.vercel.app/api/progress?progress=30&theme=white)
